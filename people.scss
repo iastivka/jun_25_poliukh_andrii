@@ -1,0 +1,113 @@
+.people {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 6px;
+    grid-row-gap: 40px;
+
+    padding-top: 30px;
+    padding-bottom: 155px;
+    max-width: 500px;
+
+    @media (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 197px;
+        max-width: 1000px;
+    }
+
+    .person {
+        position: relative;        
+        transition: transform 1s ease;
+        padding: 12px;
+        &:hover {
+            background-color: #eee;
+            border-radius: 12px;
+            cursor: pointer;
+            transform: scale(1.25);
+
+            img { 
+                border-radius: 25%;
+            }
+
+            .extra {
+                visibility: visible;                
+            }
+        }
+    }    
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;  
+        object-fit: cover;
+
+        transition: border-radius 1s ease;
+    }
+
+    .rank {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        top: 84px;
+        right: 32px;
+        
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+
+        color: $color-dark-red;
+        background-color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: $font-family-arial;
+    }
+
+    .details {
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .name {
+        color: $color-dark-slate-gray;
+        font-family: $font-family-arial;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;    
+    }
+    
+    .extra {
+        position: relative;              
+        visibility: hidden;
+        
+        color: #000;
+        font-family: $font-family-arial;
+        font-weight: 400;
+        font-size: 21.6px;
+        line-height: 100%;
+
+    }
+
+    .sport {
+        &::after {
+            content: ",";
+        }
+    }
+
+    .pay {
+        &::before {
+            content: "$";
+        }
+      
+        &::after {
+            content: "M";
+        }
+    }
+}
+
+
+
+
+
